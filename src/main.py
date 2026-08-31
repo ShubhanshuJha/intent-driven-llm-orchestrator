@@ -45,6 +45,8 @@ def ask(query: str, model_name: str):
 
 def run(user_query: str, validate_and_fix: bool = True):
     global user_intent_classifier_model
+    if not user_intent_classifier_model:
+        user_intent_classifier_model = UserIntentClassifierModel(available_models=available_models, memory_window=5)
     model_name = user_intent_classifier_model.run(query=user_query).strip()
     print(f"(*) Using {model_name} model for current query.")
     response = ask(query=user_query, model_name=model_name)
@@ -54,6 +56,7 @@ def run(user_query: str, validate_and_fix: bool = True):
             print(f"(*) LLM seem to repond with inaccurate response. Retrying...")
             run(user_query=user_query, validate_and_fix=False)
     print(f"\n(*) LLM Response: {response}")
+    return response
 
 
 if __name__ == '__main__':
