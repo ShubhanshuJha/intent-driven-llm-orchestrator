@@ -165,3 +165,22 @@ def evaluate(query: str, response: str):
     print(f"(*) Critique: {evaluation.critique}")
     time.sleep(1)
     return evaluation.verdict.upper() == 'PASS'
+
+def evaluate_api(query: str, response: str, is_api_call: bool=False):
+    judge_model = LLMJudgeModel()
+    import time
+    evaluation = judge_model.run(
+        query=query,
+        response=response,
+    )
+    # print(f"(*) {type(evaluation) = }")
+    print(f"\n(*) Score: {evaluation.score}/10")
+    print(f"(*) Correctness: {evaluation.correctness}/10")
+    print(f"(*) Relevance: {evaluation.relevance}/10")
+    print(f"(*) Completeness: {evaluation.completeness}/10")
+    print(f"(*) Instruction Following: {evaluation.instruction_following}/10")
+    print(f"(*) Verdict: {evaluation.verdict}")
+    print(f"(*) Critique: {evaluation.critique}")
+    time.sleep(1)
+    return evaluation
+

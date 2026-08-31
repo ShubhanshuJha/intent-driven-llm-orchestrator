@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LLM Orchestrator</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+    <!-- KaTeX CSS -->
+    <link
+        rel="stylesheet"
+        href="//cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.css"
+        crossorigin="anonymous"
+    >
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <header class="header">
+        <div>
+            <h1>LLM Orchestrator</h1>
+            <p>
+                Intent-aware multi-model AI system
+            </p>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            Online
+        </div>
+    </header>
+
+
+    <main
+        id="chat-container"
+        class="chat-container"
+    >
+
+        <div class="message assistant-message">
+            <div class="message-content">
+                Hello. How can I help you?
+            </div>
+        </div>
+
+    </main>
+
+
+    <div
+        id="loading"
+        class="loading hidden"
+    >
+        Processing request...
+    </div>
+
+
+    <footer class="input-container">
+
+        <textarea
+            id="query-input"
+            placeholder="Ask anything..."
+            rows="1"
+        ></textarea>
+
+        <button
+            id="send-button"
+            onclick="sendQuery()"
+        >
+            Send
+        </button>
+
+    </footer>
+
+</div>
+
+<!-- Marked: Markdown renderer -->
+    <script
+        src="//cdn.jsdelivr.net/npm/marked/lib/marked.umd.js">
+    </script>
+
+    <!-- KaTeX -->
+    <script
+        src="//cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.js"
+        crossorigin="anonymous">
+    </script>
+
+    <!-- KaTeX Auto Render -->
+    <script
+        src="//cdn.jsdelivr.net/npm/katex@0.18.4/dist/contrib/auto-render.min.js"
+        crossorigin="anonymous">
+    </script>
+
+<script src="/static/js/app.js"></script>
+
+</body>
+</html>
