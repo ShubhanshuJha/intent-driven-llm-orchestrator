@@ -1,0 +1,135 @@
+
+2026-08-31 21:50:33 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model requested | profile=fast_lightweight
+2026-08-31 21:50:35 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model initialized successfully | profile=fast_lightweight | backend=ollama | model=mistral:7b
+
+Enter your query [Write 'exit' to exit program]: what is a data engineer?
+(*) Using agent_model model for current query.
+2026-08-31 21:51:07 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model requested | profile=agent
+2026-08-31 21:51:08 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model initialized successfully | profile=agent | backend=ollama | model=qwen3:8b
+2026-08-31 21:51:26 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model requested | profile=judge
+2026-08-31 21:51:28 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model initialized successfully | profile=judge | backend=ollama | model=gpt-oss:20b
+(*) type(evaluation) = <class 'llm_models.judge_models.LLMJudgeResponse'>
+
+(*) Score: 9.5/10
+(*) Correctness: 10.0/10
+(*) Relevance: 10.0/10
+(*) Completeness: 9.0/10
+(*) Instruction Following: 10.0/10
+(*) Verdict: PASS
+(*) Critique: Accurate, concise definition covering key responsibilities and tools.
+(*) LLM Response: A data engineer is a professional who designs, builds, and maintains the infrastructure required to store, process, and analyze large volumes of data. They work with databases, data warehouses, and data lakes, and are responsible for ensuring that data is available, reliable, and secure. Data engineers often use tools like SQL, Python, and big data technologies such as Hadoop and Spark to manage and process data. Their role is crucial in enabling data scientists and analysts to derive insights from data.
+
+Enter your query [Write 'exit' to exit program]: what is the value of (a+b)*(a-b), where a=9, and b=2?
+(*) Using agent_model model for current query.
+2026-08-31 21:54:01 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model requested | profile=judge
+2026-08-31 21:54:02 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model initialized successfully | profile=judge | backend=ollama | model=gpt-oss:20b
+(*) type(evaluation) = <class 'llm_models.judge_models.LLMJudgeResponse'>
+
+(*) Score: 9.5/10
+(*) Correctness: 10.0/10
+(*) Relevance: 10.0/10
+(*) Completeness: 10.0/10
+(*) Instruction Following: 10.0/10
+(*) Verdict: PASS
+(*) Critique: Accurate answer, concise, meets all criteria.
+(*) LLM Response: The value of $(a+b) \times (a-b)$, where $a = 9$ and $b = 2$, is $77$.
+
+Enter your query [Write 'exit' to exit program]: write a c program to show malloc.
+(*) Using coding_model model for current query.
+2026-08-31 21:56:03 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model requested | profile=coding
+2026-08-31 21:56:05 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model initialized successfully | profile=coding | backend=ollama | model=qwen3-coder:30b
+2026-08-31 21:57:06 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model requested | profile=judge
+2026-08-31 21:57:08 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model initialized successfully | profile=judge | backend=ollama | model=gpt-oss:20b
+(*) type(evaluation) = <class 'llm_models.judge_models.LLMJudgeResponse'>
+
+(*) Score: 10.0/10
+(*) Correctness: 10.0/10
+(*) Relevance: 10.0/10
+(*) Completeness: 10.0/10
+(*) Instruction Following: 10.0/10
+(*) Verdict: PASS
+(*) Critique: The program correctly demonstrates malloc usage, includes error checking, initialization, and freeing memory, fully satisfying the request.
+(*) LLM Response: ```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr;
+    int n, i;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    // Dynamically allocate memory using malloc
+    ptr = (int*)malloc(n * sizeof(int));
+
+    // Check if memory was allocated successfully
+    if (ptr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+
+    printf("Memory allocated successfully.\n");
+
+    // Initialize and print the array elements
+    for (i = 0; i < n; i++) {
+        ptr[i] = i + 1;
+        printf("ptr[%d] = %d\n", i, ptr[i]);
+    }
+
+    // Free the allocated memory
+    free(ptr);
+    printf("Memory freed successfully.\n");
+
+    return 0;
+}
+```
+
+Enter your query [Write 'exit' to exit program]: how to call someone using VOIP without paying anything?
+(*) Using agent_model model for current query.
+2026-08-31 22:00:00 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model requested | profile=judge
+2026-08-31 22:00:01 | INFO     | C:\Users\ShubhanshuJha\Downloads\aws-ai-agent\src\llm_models\llm_factory.py | LLM model initialized successfully | profile=judge | backend=ollama | model=gpt-oss:20b
+(*) type(evaluation) = <class 'llm_models.judge_models.LLMJudgeResponse'>
+
+(*) Score: 9.0/10
+(*) Correctness: 10.0/10
+(*) Relevance: 10.0/10
+(*) Completeness: 9.0/10
+(*) Instruction Following: 10.0/10
+(*) Verdict: PASS
+(*) Critique: Provides accurate, relevant, and comprehensive free VOIP options, fully addressing the user’s request.
+(*) LLM Response: There are several ways to call someone using VOIP (Voice over Internet Protocol) without paying anything, primarily by using free or low-cost services. Here are some common methods:
+
+1. **Google Voice**:
+   - Google Voice offers free calls to U.S. and Canadian numbers. You can also use it to make international calls at a low cost if you have a Google Voice number.
+   - To use it, you need a Google account and a U.S. or Canadian phone number.
+
+2. **Skype**:
+   - Skype allows you to make free calls to other Skype users. However, calling landlines or mobile numbers may require a subscription or a small fee.
+   - You can also use Skype with a free account to make calls to other Skype users.
+
+3. **WhatsApp**:
+   - WhatsApp allows you to make free voice and video calls to other WhatsApp users. It is available on both iOS and Android devices.
+   - You need to have a WhatsApp account and a phone number to use it.
+
+4. **Facebook Messenger**:
+   - Facebook Messenger allows you to make free voice and video calls to other Facebook users. It is available on both iOS and Android devices.
+   - You need to have a Facebook account and a phone number to use it.
+
+5. **Viber**:
+   - Viber allows you to make free voice and video calls to other Viber users. It is available on both iOS and Android devices.
+   - You need to have a Viber account and a phone number to use it.
+
+6. **Free VOIP Services**:
+   - There are several free VOIP services that allow you to make calls over the internet. Some popular ones include:
+     - **Line2**
+     - **RingCentral**
+     - **8x8**
+   - These services often offer free trials or limited free calling options.
+
+7. **VoIP Providers with Free Plans**:
+   - Some VOIP providers offer free plans with limited calling options. These can be a good option if you need to make occasional calls.
+
+When using these services, it is important to ensure that you are using a stable internet connection to avoid call quality issues. Additionally, some services may require you to register or have a phone number to use their services.
+
+Enter your query [Write 'exit' to exit program]: exit
