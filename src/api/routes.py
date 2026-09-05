@@ -1,5 +1,4 @@
 from fastapi import APIRouter, HTTPException
-
 from api.schemas import QueryRequest, QueryResponse
 from main import run
 
