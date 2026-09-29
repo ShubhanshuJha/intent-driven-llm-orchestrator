@@ -12,3 +12,8 @@ numexpr
 boto3
 mypy_extensions
 ddgs
+uvicorn
+fastapi
+jinja2
+python-docx
+openpyxl
