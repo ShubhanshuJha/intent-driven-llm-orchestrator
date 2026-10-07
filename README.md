@@ -1,6 +1,6 @@
 # Intent-Driven LLM Orchestrator
 
-A fully local, multi-model LLM router. A small, fast classifier model reads every user query, decides *which kind of intelligence the request actually needs*, and dispatches it to a specialist model. An independent LLM-as-a-judge then scores the answer and triggers a retry when the answer does not hold up.
+A fully local, multi-model Large Language Model router. A small, fast classifier model reads every user query, decides *which kind of intelligence the request actually needs*, and dispatches it to a specialist model. An independent LLM-as-a-judge then scores the answer and triggers a retry when the answer does not hold up.
 
 Everything runs on your own machine through [Ollama](https://ollama.com). There are no API keys, no billing, and no cloud inference — the only outbound network call is the DuckDuckGo web search tool available to the agent.
 
