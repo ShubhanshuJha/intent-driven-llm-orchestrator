@@ -297,7 +297,6 @@ if __name__ == "__main__":
         "Search for the latest Ollama release notes, save a short summary "
         "as ollama_notes.md, then list the files in the current directory."
     )
-
     agent(
             "Generate a very-very unique and technical knowledge base on "
             "making the AI work like GOD, and save the content in very "
